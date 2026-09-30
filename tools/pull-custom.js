@@ -261,6 +261,7 @@ function readSpeciesRow(cellName, values, isFirstOfNum) {
 /*                                  Movesets                                  */
 /* -------------------------------------------------------------------------- */
 
+// TODO: Megas and such don't need their own learnset entries. Figure out how that works in Showdown.
 /**
  * @param {import("googleapis").sheets_v4.Sheets} sheets
  */
