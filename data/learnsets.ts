@@ -167,7 +167,7 @@ export const Learnsets: import("../sim/dex-species").LearnsetDataTable = {
 	stalacmite: { learnset: { tackle: ["9L1"] } },
 	stalacmitehidden: { learnset: { tackle: ["9L1"] } },
 	stalacmitemega: { learnset: { tackle: ["9L1"] } },
-	stalacmitehiddenmega: { learnset: { tackle: ["9L1"] } },
+	stalacmitemegahidden: { learnset: { tackle: ["9L1"] } },
 	hemasect: { learnset: { tackle: ["9L1"] } },
 	plasmite: { learnset: { tackle: ["9L1"] } },
 	plasmitemega: { learnset: { tackle: ["9L1"] } },

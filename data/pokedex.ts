@@ -143,6 +143,7 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		heightm: 1.2,
 		weightkg: 31,
 		eggGroups: ["Flying"],
+		baseSpecies: "Majeider",
 		forme: "F",
 		gender: "F",
 	},
@@ -167,6 +168,7 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		heightm: 1,
 		weightkg: 1,
 		eggGroups: ["Bug"],
+		baseSpecies: "Cryosect",
 		forme: "Hidden",
 	},
 	stalacmite: {
@@ -190,6 +192,7 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		heightm: 1,
 		weightkg: 1,
 		eggGroups: ["Bug"],
+		baseSpecies: "Stalacmite",
 		forme: "Hidden",
 	},
 	stalacmitemega: {
@@ -202,19 +205,21 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		heightm: 1,
 		weightkg: 1,
 		eggGroups: ["Bug"],
+		baseSpecies: "Stalacmite",
 		forme: "Mega",
 	},
-	stalacmitehiddenmega: {
+	stalacmitemegahidden: {
 		num: 2018,
 		gen: 9,
-		name: "Stalacmite-Hidden Mega",
+		name: "Stalacmite-Mega-Hidden",
 		types: ["Ice", "Bug"],
 		abilities: { "0": "Icy Ambush" },
 		baseStats: { hp: 62, atk: 142, def: 89, spa: 61, spd: 72, spe: 134 },
 		heightm: 1,
 		weightkg: 1,
 		eggGroups: ["Bug"],
-		forme: "Hidden Mega",
+		baseSpecies: "Stalacmite",
+		forme: "Mega Hidden",
 	},
 	hemasect: {
 		num: 2019,
@@ -248,6 +253,7 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		heightm: 1,
 		weightkg: 1,
 		eggGroups: ["Bug"],
+		baseSpecies: "Plasmite",
 		forme: "Mega",
 	},
 	pyrosect: {
@@ -282,6 +288,7 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		heightm: 1,
 		weightkg: 1,
 		eggGroups: ["Bug"],
+		baseSpecies: "Thermmite",
 		forme: "Mega",
 	},
 };

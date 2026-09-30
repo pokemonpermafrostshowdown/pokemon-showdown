@@ -165,15 +165,19 @@ function readSpeciesRow(cellName, values, isFirstOfNum) {
 	num += NUM_OFFSET;
 
 	/** @type {string} */
-	let id, name;
+	let id;
+	/** @type {string} */
+	let speciesName;
+	/** @type {string} */
+	let name;
 	/** @type {string | undefined} */
 	let form;
 	const nameWithFormMatch = /^(.*) \(([^()]*)\)$/.exec(cellName);
 	if (nameWithFormMatch) {
-		name = nameWithFormMatch[1];
+		speciesName = nameWithFormMatch[1];
 		form = nameWithFormMatch[2];
 	} else {
-		name = cellName;
+		speciesName = cellName;
 	}
 
 	if (form && form in FORM_NAME_TRANSFORMS) {
@@ -182,10 +186,11 @@ function readSpeciesRow(cellName, values, isFirstOfNum) {
 
 	const isFirstForm = !!form && isFirstOfNum(num);
 	if (form && !isFirstForm) {
-		id = toID(name + form);
-		name += "-" + form;
+		id = toID(speciesName + form);
+		name = speciesName + "-" + form.replace(/ /g, "-");
 	} else {
-		id = toID(name);
+		id = toID(speciesName);
+		name = speciesName;
 	}
 
 	const type1 = values[2].note;
@@ -247,8 +252,11 @@ function readSpeciesRow(cellName, values, isFirstOfNum) {
 		eggGroups,
 	};
 
-	if (form) {
-		species[isFirstForm ? "baseForme" : "forme"] = form;
+	if (isFirstForm) {
+		species.baseForme = form;
+	} else if (form) {
+		species.baseSpecies = speciesName;
+		species.forme = form;
 	}
 	if (gender) {
 		species.gender = gender;

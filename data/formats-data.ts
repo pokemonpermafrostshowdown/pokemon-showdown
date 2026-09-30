@@ -18,7 +18,7 @@ export const FormatsData: import("../sim/dex-species").SpeciesFormatsDataTable =
 		stalacmite: { tier: "OU", doublesTier: "DOU" },
 		stalacmitehidden: { tier: "OU", doublesTier: "DOU" },
 		stalacmitemega: { tier: "OU", doublesTier: "DOU" },
-		stalacmitehiddenmega: { tier: "OU", doublesTier: "DOU" },
+		stalacmitemegahidden: { tier: "OU", doublesTier: "DOU" },
 		hemasect: { tier: "OU", doublesTier: "DOU" },
 		plasmite: { tier: "OU", doublesTier: "DOU" },
 		plasmitemega: { tier: "OU", doublesTier: "DOU" },
