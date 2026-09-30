@@ -105,4 +105,36 @@ export const AbilitiesCustom: import("../sim/dex-abilities").AbilityDataTable =
 			rating: 3,
 			num: 2004,
 		},
+
+		icyambush: {
+			onSwitchInPriority: 2,
+			onSwitchIn(pokemon) {
+				if (
+					!["Cryosect", "Stalacmite"].includes(
+						pokemon.baseSpecies.baseSpecies
+					) ||
+					pokemon.species.forme.includes("Hidden")
+				) {
+					return;
+				}
+				this.add("-activate", pokemon, "ability: Icy Ambush");
+				pokemon.formeChange(
+					pokemon.species.forme + "-Hidden",
+					this.effect,
+					true
+				);
+			},
+			flags: {
+				failroleplay: 1,
+				noreceiver: 1,
+				noentrain: 1,
+				notrace: 1,
+				failskillswap: 1,
+				cantsuppress: 1,
+				notransform: 1,
+			},
+			name: "Icy Ambush",
+			rating: 3,
+			num: 2005,
+		},
 	};

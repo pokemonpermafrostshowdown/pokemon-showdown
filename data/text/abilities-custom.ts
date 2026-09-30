@@ -16,4 +16,12 @@ export const AbilitiesTextCustom: { [id: IDEntry]: AbilityText } = {
 		shortDesc:
 			"This Pokémon gains 1.3× HP from draining/Aqua Ring/Ingrain/Leech Seed/Strength Sap.",
 	},
+	icyambush: {
+		name: "Icy Ambush",
+		desc: "If this Pokémon is Cryosect or Stalacmite, it transforms into its Hidden form on entry. On being hit, it loses 1/4 of its max HP, deals damage to both foes, and loses the Hidden form. Hidden form returns if healed to max HP.",
+		shortDesc:
+			"Cryosect or Stalacmite: Gain Substitute-like form on entry, deal damage to foes when broken.",
+
+		activate: "{POKEMON} is readying an ambush.",
+	},
 };
