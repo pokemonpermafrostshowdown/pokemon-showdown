@@ -23,10 +23,12 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 		name: "[Gen 9] Permafrost Singles",
 		gameType: "singles",
 		ruleset: ["Standard", "+CAP"],
+		mod: "permafrost",
 	},
 	{
 		name: "[Gen 9] Permafrost Doubles",
 		gameType: "doubles",
 		ruleset: ["Standard Doubles", "+CAP"],
+		mod: "permafrost",
 	},
 ];
