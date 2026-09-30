@@ -158,7 +158,7 @@ export const Learnsets: import("../sim/dex-species").LearnsetDataTable = {
 			wavecrash: ["9L51"],
 		},
 	},
-	pawnd: { learnset: { tackle: ["9L1"] } },
+	pawnd: { learnset: { tackle: ["9L1"], crosscapture: ["9L1"] } },
 	quaxelot: { learnset: { tackle: ["9L1"] } },
 	majeider: { learnset: { tackle: ["9L1"] } },
 	majeiderf: { learnset: { tackle: ["9L1"] } },

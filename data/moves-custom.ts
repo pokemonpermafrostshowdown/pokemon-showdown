@@ -62,4 +62,28 @@ export const MovesCustom: import("../sim/dex-moves").MoveDataTable = {
 		target: "allAdjacentFoes",
 		type: "Dragon",
 	},
+
+	crosscapture: {
+		num: 2004,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Cross Capture",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1 },
+		target: "normal",
+		type: "Normal",
+		onBasePower(basePower, source, target) {
+			if (
+				this.gameType === "doubles" &&
+				// This seems backwards but it's not. Position is relative to each side's left,
+				// so if positions are equal then the mons are diagonally aligned.
+				source.position === target.position
+			) {
+				this.debug("cross capture boost");
+				return this.chainModify(1.5);
+			}
+		},
+	},
 };

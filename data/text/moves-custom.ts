@@ -14,4 +14,8 @@ export const MovesTextCustom: { [id: IDEntry]: MoveText } = {
 		desc: "Lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "Lowers the user's Defense and Sp. Def by 1.",
 	},
+	crosscapture: {
+		name: "Cross Capture",
+		shortDesc: "Attacking diagonally in a double battle: 1.5× power.",
+	},
 };
