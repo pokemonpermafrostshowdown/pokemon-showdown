@@ -25,7 +25,7 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 		ruleset: ["Standard", "+CAP"],
 	},
 	{
-		name: "[Gen 9] Permafrost Doubles (6v6)",
+		name: "[Gen 9] Permafrost Doubles",
 		gameType: "doubles",
 		ruleset: ["Standard Doubles", "+CAP"],
 	},
