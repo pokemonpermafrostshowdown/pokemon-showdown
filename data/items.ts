@@ -1,3 +1,5 @@
+import { ItemsCustom } from './items-custom';
+
 export const Items: import('../sim/dex-items').ItemDataTable = {
 	abilityshield: {
 		name: "Ability Shield",
@@ -8182,4 +8184,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 8,
 		isNonstandard: "CAP",
 	},
+
+	...ItemsCustom,
 };
