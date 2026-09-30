@@ -83,6 +83,26 @@ export const AbilitiesCustom: import("../sim/dex-abilities").AbilityDataTable =
 			flags: {},
 			name: "Detonate",
 			rating: 4,
-			num: 2001,
+			num: 2003,
+		},
+
+		bloodbattery: {
+			onTryHealPriority: 1,
+			onTryHeal(damage, target, source, effect) {
+				const heals = [
+					"drain",
+					"leechseed",
+					"ingrain",
+					"aquaring",
+					"strengthsap",
+				];
+				if (heals.includes(effect.id)) {
+					return this.chainModify([5324, 4096]);
+				}
+			},
+			flags: {},
+			name: "Blood Battery",
+			rating: 3,
+			num: 2004,
 		},
 	};

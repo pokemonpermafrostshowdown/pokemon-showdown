@@ -11,4 +11,9 @@ export const AbilitiesTextCustom: { [id: IDEntry]: AbilityText } = {
 		shortDesc:
 			"This Pokemon's Normal-type moves become Fire type and have 1.2× power.",
 	},
+	bloodbattery: {
+		name: "Blood Battery",
+		shortDesc:
+			"This Pokémon gains 1.3× HP from draining/Aqua Ring/Ingrain/Leech Seed/Strength Sap.",
+	},
 };
