@@ -262,6 +262,12 @@ function readSpeciesRow(cellName, values, isFirstOfNum) {
 		species.gender = gender;
 	}
 
+	const mergeModifiersText = readNoteOrStringValue(values[32]);
+	if (mergeModifiersText) {
+		const mergeModifiers = JSON.parse(mergeModifiersText);
+		Object.assign(species, mergeModifiers);
+	}
+
 	return { ok: true, row: { id, cellName, species } };
 }
 

@@ -170,6 +170,8 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		eggGroups: ["Bug"],
 		baseSpecies: "Cryosect",
 		forme: "Hidden",
+		battleOnly: "Cryosect",
+		requiredAbility: "Icy Ambush",
 	},
 	stalacmite: {
 		num: 2018,
@@ -194,6 +196,8 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		eggGroups: ["Bug"],
 		baseSpecies: "Stalacmite",
 		forme: "Hidden",
+		battleOnly: "Stalacmite",
+		requiredAbility: "Icy Ambush",
 	},
 	stalacmitemega: {
 		num: 2018,
@@ -207,6 +211,7 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		eggGroups: ["Bug"],
 		baseSpecies: "Stalacmite",
 		forme: "Mega",
+		requiredItem: "Stalacmitite",
 	},
 	stalacmitemegahidden: {
 		num: 2018,
@@ -220,6 +225,9 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		eggGroups: ["Bug"],
 		baseSpecies: "Stalacmite",
 		forme: "Mega Hidden",
+		battleOnly: "Stalacmite-Mega",
+		requiredItem: "Stalacmitite",
+		requiredAbility: "Icy Ambush",
 	},
 	hemasect: {
 		num: 2019,
@@ -255,6 +263,7 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		eggGroups: ["Bug"],
 		baseSpecies: "Plasmite",
 		forme: "Mega",
+		requiredItem: "Plasmitite",
 	},
 	pyrosect: {
 		num: 2021,
@@ -290,5 +299,6 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		eggGroups: ["Bug"],
 		baseSpecies: "Thermmite",
 		forme: "Mega",
+		requiredItem: "Thermmitite",
 	},
 };
