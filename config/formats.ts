@@ -25,25 +25,8 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 		ruleset: ["Standard", "+CAP"],
 	},
 	{
-		name: "[Gen 9] Permafrost Doubles",
-		gameType: "doubles",
-		ruleset: [
-			"Standard Doubles",
-			"Min Team Size = 6",
-			"Max Team Size = 6",
-			"Picked Team Size = 4",
-			"+CAP",
-		],
-	},
-	{
 		name: "[Gen 9] Permafrost Doubles (6v6)",
 		gameType: "doubles",
-		ruleset: [
-			"Standard Doubles",
-			"Min Team Size = 6",
-			"Max Team Size = 6",
-			"Picked Team Size = 6",
-			"+CAP",
-		],
+		ruleset: ["Standard Doubles", "+CAP"],
 	},
 ];

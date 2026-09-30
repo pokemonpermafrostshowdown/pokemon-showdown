@@ -99,7 +99,7 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		eggGroups: ["Field", "Water 2"],
 	},
 	pawnd: {
-		num: 2012,
+		num: 2014,
 		gen: 9,
 		name: "Pawnd",
 		types: ["Normal", "Flying"],
@@ -110,7 +110,7 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		eggGroups: ["Flying"],
 	},
 	quaxelot: {
-		num: 2013,
+		num: 2015,
 		gen: 9,
 		name: "Quaxelot",
 		types: ["Normal", "Flying"],
@@ -121,7 +121,7 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		eggGroups: ["Flying"],
 	},
 	majeider: {
-		num: 2014,
+		num: 2016,
 		gen: 9,
 		name: "Majeider",
 		types: ["Normal", "Flying"],
@@ -134,7 +134,7 @@ export const Pokedex: import("../sim/dex-species").SpeciesDataTable = {
 		gender: "M",
 	},
 	majeiderf: {
-		num: 2014,
+		num: 2016,
 		gen: 9,
 		name: "Majeider-F",
 		types: ["Fighting", "Flying"],

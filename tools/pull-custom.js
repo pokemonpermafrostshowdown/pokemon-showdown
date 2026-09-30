@@ -270,7 +270,7 @@ async function readMovesetToLearnsetData(sheets) {
 
 	const response = await sheets.spreadsheets.get({
 		spreadsheetId: config.pullcustom.spreadsheets.movesets,
-		ranges: ["A2:ZZ1000"],
+		ranges: ["Movesets!A2:ZZ1000"],
 		includeGridData: true,
 	});
 
