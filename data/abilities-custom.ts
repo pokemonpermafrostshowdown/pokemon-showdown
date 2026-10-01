@@ -111,7 +111,7 @@ export const AbilitiesCustom: import("../sim/dex-abilities").AbilityDataTable =
 			onDamage(damage, target, source, effect) {
 				if (
 					effect?.effectType === "Move" &&
-					["cryosect", "stalacmite", "stalacmite-mega"].includes(
+					["cryosect", "stalacmite", "stalacmitemega"].includes(
 						target.species.id
 					)
 				) {
@@ -123,7 +123,7 @@ export const AbilitiesCustom: import("../sim/dex-abilities").AbilityDataTable =
 			onCriticalHit(target, source, move) {
 				if (!target) return;
 				if (
-					!["cryosect", "stalacmite", "stalacmite-mega"].includes(
+					!["cryosect", "stalacmite", "stalacmitemega"].includes(
 						target.species.id
 					)
 				) {
@@ -141,7 +141,7 @@ export const AbilitiesCustom: import("../sim/dex-abilities").AbilityDataTable =
 			onEffectiveness(typeMod, target, type, move) {
 				if (!target || move.category === "Status") return;
 				if (
-					!["cryosect", "stalacmite", "stalacmite-mega"].includes(
+					!["cryosect", "stalacmite", "stalacmitemega"].includes(
 						target.species.id
 					)
 				) {
@@ -159,7 +159,7 @@ export const AbilitiesCustom: import("../sim/dex-abilities").AbilityDataTable =
 			},
 			onUpdate(pokemon) {
 				if (
-					["cryosect", "stalacmite", "stalacmite-mega"].includes(
+					["cryosect", "stalacmite", "stalacmitemega"].includes(
 						pokemon.species.id
 					) &&
 					this.effectState.busted
