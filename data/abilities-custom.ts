@@ -166,6 +166,22 @@ export const AbilitiesCustom: import("../sim/dex-abilities").AbilityDataTable =
 				) {
 					const newSpecies = pokemon.species.name + "-Revealed";
 					pokemon.formeChange(newSpecies, this.effect, true);
+
+					for (const target of pokemon.foes()) {
+						const typeMod = this.clampIntRange(
+							target.runEffectiveness(
+								this.dex.getActiveMove("powdersnow")
+							),
+							-6,
+							6
+						);
+						this.damage(
+							(target.maxhp * 2 ** typeMod) / 8,
+							target,
+							pokemon
+						);
+					}
+
 					this.damage(
 						pokemon.baseMaxhp / 8,
 						pokemon,
