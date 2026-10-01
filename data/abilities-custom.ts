@@ -107,22 +107,72 @@ export const AbilitiesCustom: import("../sim/dex-abilities").AbilityDataTable =
 		},
 
 		icyambush: {
-			onSwitchInPriority: 2,
-			onSwitchIn(pokemon) {
+			onDamagePriority: 1,
+			onDamage(damage, target, source, effect) {
 				if (
-					!["Cryosect", "Stalacmite"].includes(
-						pokemon.baseSpecies.baseSpecies
-					) ||
-					pokemon.species.forme.includes("Hidden")
+					effect?.effectType === "Move" &&
+					["cryosect", "stalacmite", "stalacmite-mega"].includes(
+						target.species.id
+					)
+				) {
+					this.add("-activate", target, "ability: Icy Ambush");
+					this.effectState.busted = true;
+					return 0;
+				}
+			},
+			onCriticalHit(target, source, move) {
+				if (!target) return;
+				if (
+					!["cryosect", "stalacmite", "stalacmite-mega"].includes(
+						target.species.id
+					)
 				) {
 					return;
 				}
-				this.add("-activate", pokemon, "ability: Icy Ambush");
-				pokemon.formeChange(
-					pokemon.species.forme + "-Hidden",
-					this.effect,
-					true
-				);
+				const hitSub =
+					target.volatiles["substitute"] &&
+					!move.flags["bypasssub"] &&
+					!(move.infiltrates && this.gen >= 6);
+				if (hitSub) return;
+
+				if (!target.runImmunity(move)) return;
+				return false;
+			},
+			onEffectiveness(typeMod, target, type, move) {
+				if (!target || move.category === "Status") return;
+				if (
+					!["cryosect", "stalacmite", "stalacmite-mega"].includes(
+						target.species.id
+					)
+				) {
+					return;
+				}
+
+				const hitSub =
+					target.volatiles["substitute"] &&
+					!move.flags["bypasssub"] &&
+					!(move.infiltrates && this.gen >= 6);
+				if (hitSub) return;
+
+				if (!target.runImmunity(move)) return;
+				return 0;
+			},
+			onUpdate(pokemon) {
+				if (
+					["cryosect", "stalacmite", "stalacmite-mega"].includes(
+						pokemon.species.id
+					) &&
+					this.effectState.busted
+				) {
+					const newSpecies = pokemon.species.name + "-Revealed";
+					pokemon.formeChange(newSpecies, this.effect, true);
+					this.damage(
+						pokemon.baseMaxhp / 8,
+						pokemon,
+						pokemon,
+						this.dex.species.get(newSpecies)
+					);
+				}
 			},
 			flags: {
 				failroleplay: 1,
@@ -131,6 +181,7 @@ export const AbilitiesCustom: import("../sim/dex-abilities").AbilityDataTable =
 				notrace: 1,
 				failskillswap: 1,
 				cantsuppress: 1,
+				breakable: 1,
 				notransform: 1,
 			},
 			name: "Icy Ambush",

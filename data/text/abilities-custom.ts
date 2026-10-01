@@ -18,10 +18,11 @@ export const AbilitiesTextCustom: { [id: IDEntry]: AbilityText } = {
 	},
 	icyambush: {
 		name: "Icy Ambush",
-		desc: "If this Pokémon is Cryosect or Stalacmite, it transforms into its Hidden form on entry. On being hit, it loses 1/4 of its max HP, deals damage to both foes, and loses the Hidden form. Hidden form returns if healed to max HP.",
+		desc: "If this Pokémon is Cryosect or Stalacmite, the first hit it deals 0 neutral damage. Its trap is then sprung, it changes to Revealed Form, deals damage to both foes, and loses 1/4 of its max HP",
 		shortDesc:
-			"Cryosect or Stalacmite: Gain Substitute-like form on entry, deal damage to foes when broken.",
+			"Cryosect or Stalacmite: The first hit it takes is blocked, it takes 1/4 HP damage instead and damages both foes back slightly.",
 
-		activate: "{POKEMON} is readying an ambush.",
+		block: "  It sprung the ambush!",
+		transform: "{POKEMON}'s true form was revealed!",
 	},
 };
