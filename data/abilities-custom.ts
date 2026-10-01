@@ -188,6 +188,20 @@ export const AbilitiesCustom: import("../sim/dex-abilities").AbilityDataTable =
 						pokemon,
 						this.dex.species.get(newSpecies)
 					);
+				} else if (
+					[
+						"cryosectrevealed",
+						"stalacmiterevealed",
+						"stalacmitemegarevealed",
+					].includes(pokemon.species.id) &&
+					// Can't check if busted here because effectState is ephemeral, assume that if we're
+					// in this form then we're busted.
+					pokemon.hp === pokemon.maxhp
+				) {
+					const newSpecies = pokemon.species.name.replace("-Revealed", "");
+					pokemon.formeChange(newSpecies, this.effect, true);
+					this.effectState.busted = false;
+					// TODO: Add a message for this.
 				}
 			},
 			flags: {
