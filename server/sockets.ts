@@ -361,12 +361,13 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 						}
 					}
 
-					void server.serve(req, res, e => {
-						if (e.status === 404) {
-							void staticServer.serveFile('404.html', 404, {}, req, res);
-							return true;
-						}
-					});
+					// void server.serve(req, res, e => {
+					// 	if (e.status === 404) {
+					// 		void staticServer.serveFile('404.html', 404, {}, req, res);
+					// 		return true;
+					// 	}
+					// });
+					void server.serve(req, res);
 				});
 			};
 
