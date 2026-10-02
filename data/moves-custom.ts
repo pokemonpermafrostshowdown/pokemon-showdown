@@ -59,7 +59,7 @@ export const MovesCustom: import("../sim/dex-moves").MoveDataTable = {
 				spd: -1,
 			},
 		},
-		target: "allAdjacentFoes",
+		target: "allAdjacent",
 		type: "Dragon",
 	},
 
@@ -84,6 +84,42 @@ export const MovesCustom: import("../sim/dex-moves").MoveDataTable = {
 				this.debug("cross capture boost");
 				return this.chainModify(1.5);
 			}
+		},
+	},
+
+	plasmaeater: {
+		num: 2005,
+		accuracy: 90,
+		basePower: 80,
+		category: "Special",
+		name: "Plasma Eater",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1 },
+		target: "normal",
+		type: "Electric",
+		secondary: {
+			chance: 100,
+			volatileStatus: "plasmaeater",
+		},
+		condition: {
+			onStart(target) {
+				this.add("-start", target, "move: Plasma Eater");
+			},
+			onResidualOrder: 8,
+			onResidual(pokemon) {
+				const target = this.getAtSlot(
+					pokemon.volatiles["plasmaeater"].sourceSlot
+				);
+				if (!target || target.fainted || target.hp <= 0) {
+					this.debug("Nothing to leech into");
+					return;
+				}
+				const damage = this.damage(pokemon.baseMaxhp / 8, pokemon, target);
+				if (damage) {
+					this.heal(damage, target, pokemon);
+				}
+			},
 		},
 	},
 };

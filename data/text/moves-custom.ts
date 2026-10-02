@@ -18,4 +18,12 @@ export const MovesTextCustom: { [id: IDEntry]: MoveText } = {
 		name: "Cross Capture",
 		shortDesc: "Attacking diagonally in a double battle: 1.5× power.",
 	},
+	plasmaeater: {
+		name: "Plasma Eater",
+		desc: "The Pokemon at the user's position steals 1/8 of the target's maximum HP, rounded down, at the end of each turn. If Big Root is held by the recipient, the HP recovered is 1.3× normal, rounded half down. If the target uses Baton Pass, the replacement will continue being leeched. If the target switches out or uses Mortal Spin or Rapid Spin successfully, the effect ends.",
+		shortDesc: "1/8 of target's HP is restored to user every turn.",
+		start: "  {POKEMON} was tapped!",
+		end: "  {POKEMON} was freed from Plasma Eater!",
+		damage: "  {POKEMON}'s health is sapped by Plasma Eater!",
+	},
 };

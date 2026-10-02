@@ -12327,6 +12327,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (pokemon.removeVolatile('leechseed')) {
 					this.add('-end', pokemon, 'Leech Seed', '[from] move: Mortal Spin', `[of] ${pokemon}`);
 				}
+				if (pokemon.removeVolatile('plasmaeater')) {
+					this.add('-end', pokemon, 'Plasma Eater', '[from] move: Mortal Spin', `[of] ${pokemon}`);
+				}
 				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
 				for (const condition of sideConditions) {
 					if (pokemon.side.removeSideCondition(condition)) {
@@ -12342,6 +12345,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (!move.hasSheerForce) {
 				if (pokemon.hp && pokemon.removeVolatile('leechseed')) {
 					this.add('-end', pokemon, 'Leech Seed', '[from] move: Mortal Spin', `[of] ${pokemon}`);
+				}
+				if (pokemon.removeVolatile('plasmaeater')) {
+					this.add('-end', pokemon, 'Plasma Eater', '[from] move: Mortal Spin', `[of] ${pokemon}`);
 				}
 				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
 				for (const condition of sideConditions) {
@@ -14707,6 +14713,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (pokemon.removeVolatile('leechseed')) {
 					this.add('-end', pokemon, 'Leech Seed', '[from] move: Rapid Spin', `[of] ${pokemon}`);
 				}
+				if (pokemon.removeVolatile('plasmaeater')) {
+					this.add('-end', pokemon, 'Plasma Eater', '[from] move: Rapid Spin', `[of] ${pokemon}`);
+				}
 				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
 				for (const condition of sideConditions) {
 					if (pokemon.side.removeSideCondition(condition)) {
@@ -14722,6 +14731,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (!move.hasSheerForce) {
 				if (pokemon.hp && pokemon.removeVolatile('leechseed')) {
 					this.add('-end', pokemon, 'Leech Seed', '[from] move: Rapid Spin', `[of] ${pokemon}`);
+				}
+				if (pokemon.removeVolatile('plasmaeater')) {
+					this.add('-end', pokemon, 'Plasma Eater', '[from] move: Mortal Spin', `[of] ${pokemon}`);
 				}
 				const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
 				for (const condition of sideConditions) {
